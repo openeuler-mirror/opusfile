@@ -1,13 +1,13 @@
 Name:          opusfile
 Version:       0.11
-Release:       3
+Release:       4
 Summary:       A high-level API provides seeking, decode, and playback of Opus streams
 License:       BSD
 URL:           http://www.opus-codec.org/
 Source0:       http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 Patch0000:     0001-fix-MemorySanitizer-use-of-uninitialized-value.patch
 
-BuildRequires: libogg-devel openssl-devel opus-devel
+BuildRequires:  gcc  libogg-devel openssl-devel opus-devel
 
 %description
 The opusfile library provides seeking, decode, and playback of Opus streams in the Ogg
@@ -50,6 +50,9 @@ Development package for opusfile package.
 %{_libdir}/{libopusfile.so,libopusurl.so}
 
 %changelog
+* Web 02 Jun 2021 zhaoyao<zhaoyao32@huawei.com> - 0.11-4
+- fixs faileds: /bin/sh: gcc: command not found.
+
 * Thu Dec 03 2020 maminjie <maminjie1@huawei.com> - 0.11-3
 - fix MemorySanitizer: use-of-uninitialized-value
 
