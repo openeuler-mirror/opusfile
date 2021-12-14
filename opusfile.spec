@@ -1,11 +1,12 @@
 Name:          opusfile
 Version:       0.11
-Release:       3
+Release:       4
 Summary:       A high-level API provides seeking, decode, and playback of Opus streams
 License:       BSD
 URL:           http://www.opus-codec.org/
 Source0:       http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 Patch0000:     0001-fix-MemorySanitizer-use-of-uninitialized-value.patch
+Patch0001:     Fix-short-circuit-test-when-seeking-in-short-files.patch
 
 BuildRequires: libogg-devel openssl-devel opus-devel
 
@@ -50,6 +51,9 @@ Development package for opusfile package.
 %{_libdir}/{libopusfile.so,libopusurl.so}
 
 %changelog
+* Tue Dec 14 2021 chenchen <chen_aka_jan@163.com> -  0.11-4
+- Fix short-circuit test when seeking in short files
+
 * Thu Dec 03 2020 maminjie <maminjie1@huawei.com> - 0.11-3
 - fix MemorySanitizer: use-of-uninitialized-value
 
