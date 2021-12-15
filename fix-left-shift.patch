@@ -1,0 +1,25 @@
+From fb72f9f311d396be2fb5c3ac48c05abce2d42f83 Mon Sep 17 00:00:00 2001
+From: caodongxia <315816521@qq.com>
+Date: Tue, 14 Dec 2021 20:37:56 +0800
+Subject: [PATCH] fix left shift
+
+---
+ src/opusfile.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/opusfile.c b/src/opusfile.c
+index 6deaeb0..3fdc0ac 100644
+--- a/src/opusfile.c
++++ b/src/opusfile.c
+@@ -1021,7 +1021,7 @@ static opus_int64 op_rescale64(opus_int64 _x,opus_int64 _from,opus_int64 _to){
+       _x-=_from-_x;
+       frac|=1;
+     }
+-    else _x<<=1;
++    else _x = (opus_int64)((opus_uint64)(_x) << 1);
+   }
+   ret=0;
+   for(i=0;i<63;i++){
+-- 
+2.27.0
+

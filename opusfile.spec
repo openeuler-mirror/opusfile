@@ -1,12 +1,13 @@
 Name:          opusfile
 Version:       0.11
-Release:       4
+Release:       5
 Summary:       A high-level API provides seeking, decode, and playback of Opus streams
 License:       BSD
 URL:           http://www.opus-codec.org/
 Source0:       http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 Patch0000:     0001-fix-MemorySanitizer-use-of-uninitialized-value.patch
 Patch0001:     Fix-short-circuit-test-when-seeking-in-short-files.patch
+Patch0002:     fix-left-shift.patch
 
 BuildRequires: libogg-devel openssl-devel opus-devel
 
@@ -51,6 +52,9 @@ Development package for opusfile package.
 %{_libdir}/{libopusfile.so,libopusurl.so}
 
 %changelog
+* Tue Dec 14 2021 caodongxia <caodongxia@huawei.com> -  0.11-5
+- Fix left shift
+
 * Tue Dec 14 2021 chenchen <chen_aka_jan@163.com> -  0.11-4
 - Fix short-circuit test when seeking in short files
 
