@@ -1,6 +1,6 @@
 Name:          opusfile
 Version:       0.11
-Release:       5
+Release:       6
 Summary:       A high-level API provides seeking, decode, and playback of Opus streams
 License:       BSD
 URL:           http://www.opus-codec.org/
@@ -8,6 +8,7 @@ Source0:       http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 Patch0000:     0001-fix-MemorySanitizer-use-of-uninitialized-value.patch
 Patch0001:     Fix-short-circuit-test-when-seeking-in-short-files.patch
 Patch0002:     fix-left-shift.patch
+Patch0003:     Fix-intermediate-overflow-in-op_pcm_total.patch
 
 BuildRequires: libogg-devel openssl-devel opus-devel
 
@@ -52,6 +53,9 @@ Development package for opusfile package.
 %{_libdir}/{libopusfile.so,libopusurl.so}
 
 %changelog
+* Wed Dec 22 2021 xu_ping <xuping33@huawei.com> -  0.11-6
+- Fix intermediate overflow in op_pcm_total
+
 * Tue Dec 14 2021 caodongxia <caodongxia@huawei.com> -  0.11-5
 - Fix left shift
 
