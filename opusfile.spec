@@ -1,6 +1,6 @@
 Name:          opusfile
-Version:       0.11
-Release:       4
+Version:       0.12
+Release:       1
 Summary:       A high-level API provides seeking, decode, and playback of Opus streams
 License:       BSD
 URL:           http://www.opus-codec.org/
@@ -50,6 +50,9 @@ Development package for opusfile package.
 %{_libdir}/{libopusfile.so,libopusurl.so}
 
 %changelog
+* Sun Apr 03 2022 misaka00251 <misaka00251@misakanet.cn> - 0.12-1
+- Upgrade package version
+
 * Web 02 Jun 2021 zhaoyao<zhaoyao32@huawei.com> - 0.11-4
 - fixs faileds: /bin/sh: gcc: command not found.
 
